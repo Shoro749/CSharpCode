@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public interface IMusicInstrument
+    internal interface IViolin
     {
-        void Show();
         void Desc();
         void Sound();
         void History();

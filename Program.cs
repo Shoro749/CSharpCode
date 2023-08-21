@@ -23,6 +23,22 @@ namespace CSharpCode
 
                 Console.InputEncoding = Encoding.Unicode;
                 Console.OutputEncoding = Encoding.Unicode;
+
+                Violin violin = new Violin("Скрипка", "Струнний музичний смичковий інструмент.", "Майстрові", 60, 3000, "YAMAHA");
+                Trombone trombone = new Trombone("Тромбон", "Музичний інструмент сімейства мідних духових.", "Тенор", 160000, "YAMAHA");
+                Ukulele ukulele = new Ukulele("Укулеле", "Гавайський чотириструнний різновид гітари, що використовується для акордового " +
+                    "супроводу пісень та гри соло.", "Сопрано", 53, 1000, "Bodasan");
+                Cello cello = new Cello("Віолончель", "Струнний смичковий музичний інструмент, родини скрипкових, басо-тенорового " +
+                    "регістру.", "акустичний", 76, 11000, "Maxtone");
+
+                MusicInstrument[] musicInstrument = { violin, trombone, ukulele, cello };
+                foreach (var instruments in musicInstrument)
+                {
+                    instruments.Show();
+                    instruments.Desc();
+                    instruments.Sound();
+                    instruments.History();
+                }
             }
             catch (Exception ex)
             {

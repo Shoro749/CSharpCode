@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public interface IMusicInstruments
+    internal interface IUkulele
     {
+        void Desc();
         void Sound();
         void History();
     }
