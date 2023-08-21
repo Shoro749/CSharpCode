@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public interface IDevice
+    public interface ITeapot
     {
         void Sound();
-        void Show();
+        public void Desc();
     }
 }

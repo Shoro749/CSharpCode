@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public interface IDevices
+    internal interface ISteamboat
     {
         void Sound();
+        void Desc();
     }
 }

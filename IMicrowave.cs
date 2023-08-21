@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public interface IDevice
+    internal interface IMicrowave
     {
         void Sound();
-        void Show();
+        void Desc();
     }
 }

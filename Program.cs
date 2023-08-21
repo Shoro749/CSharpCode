@@ -21,23 +21,31 @@ namespace CSharpCode
                 Console.InputEncoding = Encoding.Unicode;
                 Console.OutputEncoding = Encoding.Unicode;
 
-                Teapot teapot = new Teapot("Чайник", "Кипятить воду!");
-                Microwave microwave = new Microwave("Мікрохвильовка", "Нагріває їжу!");
-                Car car = new Car("Машина", "Швидко доставляє користувача з точки А в точку Б!");
-                Steamboat steamboat = new Steamboat("Пароплав", "Перевозить людей і вантаж через воду!");
+                Teapot teapot = new Teapot("Чайник", "Кипятить воду!", "Samsung", 2000, "Білий");
+                Microwave microwave = new Microwave("Мікрохвильовка", "Нагріває їжу!", "Samsung", 600, "Gray");
+                Car car = new Car("Машина", "Швидко доставляє користувача з точки А в точку Б!", "BMW", 70, "Black");
+                Steamboat steamboat = new Steamboat("Пароплав", "Перевозить людей і вантаж через воду!", "Carnival Corporation", 12, "black");
 
-                teapot.Show();
-                teapot.Desc();
-                teapot.Sound();
-                microwave.Show();
-                microwave.Desc();
-                microwave.Sound();
-                car.Show();
-                car.Desc();
-                car.Sound();
-                steamboat.Show();
-                steamboat.Desc();
-                steamboat.Sound();
+                Device[] devices = { teapot, microwave, car, steamboat };
+                foreach (Device item in devices)
+                {
+                    item.Show();
+                    item.Desc();
+                    item.Sound();
+                }
+
+                //teapot.Show();
+                //teapot.Desc();
+                //teapot.Sound();
+                //microwave.Show();
+                //microwave.Desc();
+                //microwave.Sound();
+                //car.Show();
+                //car.Desc();
+                //car.Sound();
+                //steamboat.Show();
+                //steamboat.Desc();
+                //steamboat.Sound();
             }
             catch (Exception ex)
             {

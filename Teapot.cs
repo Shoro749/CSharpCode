@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public class Teapot : Device, IDevices
+    public class Teapot : Device, ITeapot
     {
-        public Teapot(string name, string desc) : base(name, desc) { }
+        private string _producer;
+        private int _power;
+        private string _color;
+        public Teapot(string name, string desc, string producer, int power, string color) : base(name, desc) 
+        {
+            _producer = producer;
+            _power = power;
+            _color = color;
+        }
 
-        public void Sound() { Console.WriteLine("*gurgle*");  }
+        override public void Sound() { Console.WriteLine("*gurgle*");  }
+        override public void Desc() { Console.WriteLine($"Назва: {_name}\nОпис: {_desc}\nВиробник: {_producer}\nПотужність: " +
+            $"{_power} Вт\nКолір: {_color}"); }
     }
 }
