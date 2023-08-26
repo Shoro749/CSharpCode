@@ -43,24 +43,24 @@ namespace CSharpCode
                     {
                         case 1:
                             creditCard.Info();
-                            Console.WriteLine();
                             break;
 
                         case 2:
-                            Console.Write("Введіть суму для поповнення рахунку: ");
+                            Console.Write("\nВведіть суму для поповнення рахунку: ");
                             creditCard.Add(Convert.ToInt32(Console.ReadLine()));
                             Console.WriteLine();
                             break;
 
                         case 3:
-                            Console.Write("Введіть суму для оплати: ");
+                            Console.Write("\nВведіть суму для оплати: ");
                             creditCard.Subtraction(Convert.ToInt32(Console.ReadLine()));
                             Console.WriteLine();
                             break;
 
                         case 4:
-                            Console.Write("Введіть новий PIN код: ");
+                            Console.Write("\nВведіть новий PIN код: ");
                             creditCard.ChangePIN(Convert.ToInt32(Console.ReadLine()));
+                            Console.WriteLine();
                             break;
 
                         case 5:

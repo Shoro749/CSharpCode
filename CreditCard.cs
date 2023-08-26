@@ -41,13 +41,13 @@ namespace CSharpCode
             _PIN = pIN;
             _creditLimit = creditLimit;
             _sum = sum;
+            Notify += (massage) => Console.WriteLine(massage);
         }
 
         public void Add(int num)
         {
             _sum += num;
             Console.ForegroundColor = ConsoleColor.Green;
-            Notify += (massage) => Console.WriteLine(massage);
             Notify?.Invoke("Ваш баланс поповнено на " + num + " доларів!");
             Console.ResetColor();
         }
@@ -61,7 +61,6 @@ namespace CSharpCode
                 {
                     _sum -= num;
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Notify += (massage) => Console.WriteLine(massage);
                     Notify?.Invoke("З вашого балансу було знято суму на " + num + " доларів!");
                     Console.ResetColor();
                 }
@@ -73,8 +72,7 @@ namespace CSharpCode
                         _sum = 0;
                         _creditLimit -= num;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Notify += (massage) => Console.WriteLine(massage);
-                        Notify?.Invoke("(C) З вашого балансу було знято суму на " + num + " доларів!");
+                        Notify?.Invoke("З вашого кредитного балансу було знято суму на " + num + " доларів!");
                         Console.ResetColor();
                     }
                     else { Console.WriteLine("Ви досягли ліміту!"); }
@@ -89,14 +87,13 @@ namespace CSharpCode
             else 
             { 
                 _PIN = num;
-                Notify += (massage) => Console.WriteLine(massage);
                 Notify?.Invoke("Ваш PIN був успішно змінений!");
             }
         }
 
         public void Info()
         {
-            Console.WriteLine($"Номер карти: {_number}\nПІБ: {_fullName}\nТермін дії: {_validityPeriod}\n" +
+            Console.WriteLine($"\nНомер карти: {_number}\nПІБ: {_fullName}\nТермін дії: {_validityPeriod}\n" +
                 $"PIN: {_PIN}\nКредитний ліміт: {_creditLimit}\nСума: {_sum}\n");
         }
     }
