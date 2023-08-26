@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace CSharpCode
 {
@@ -9,6 +10,14 @@ namespace CSharpCode
             DateTime currentTime = DateTime.Now;
             Console.WriteLine("Поточний час: " + currentTime.ToString("HH:mm:ss"));
         }
+
+        static string StrCurrentTime()
+        {
+            DateTime currentTime = DateTime.Now;
+            return currentTime.ToString("HH:mm:ss");
+        }
+
+        static bool Checking1(string date) => StrCurrentTime() == date;
 
         static void CurrentDate()
         {
@@ -31,6 +40,11 @@ namespace CSharpCode
             Console.WriteLine("Площа: " + (a *h)/2);
         }
 
+        static int AreaTriangle2(int a, int h)
+        {
+            return (a * h) / 2;
+        }
+
         static void AreaRectangle()
         {
             int[] arr = new int[2];
@@ -42,6 +56,10 @@ namespace CSharpCode
             Console.WriteLine("Площа: " + arr[0] * arr[1]);
         }
 
+        static int AreaRectangle2(int a, int b)
+        {
+            return a * b;
+        }
 
         static void Main(string[] args)
         {
@@ -64,6 +82,20 @@ namespace CSharpCode
                 action += AreaTriangle;
                 action += AreaRectangle;
                 action();
+
+                Console.WriteLine("\nPredicate\n");
+
+                Predicate<string> predicate = Checking1;
+                Console.WriteLine(predicate.Invoke("01.08.2014"));
+
+                Console.WriteLine("\nFunc\n");
+
+                Func<int, int, int> func = AreaTriangle2;
+                func += AreaRectangle2;
+                foreach (var item in func.GetInvocationList())
+                {
+                    Console.WriteLine(item.DynamicInvoke(5, 4));
+                }
             }
             catch (Exception ex)
             {
