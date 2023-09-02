@@ -23,6 +23,13 @@ namespace CSharpCode
             apartments.Add(3, new List<string> { "Andrew" });
         }
 
+        public House(string[] names)
+        {
+            apartments.Add(1, new List<string> { names[0], names[1] });
+            apartments.Add(2, new List<string> { names[2], names[3], names[4] });
+            apartments.Add(3, new List<string> { names[5] });
+        }
+
         public void OutPut()
         {
             foreach (var kvp in apartments)
