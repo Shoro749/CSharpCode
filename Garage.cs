@@ -16,6 +16,20 @@ namespace CSharpCode
 {
     public class Garage
     {
-        private List<int> cars = new List<int>();
+        private List<Car> cars = new List<Car>();
+
+        public Garage(Car obj, Car obj2) 
+        {
+            cars.Add(obj);
+            cars.Add(obj2);
+        }
+
+        public void ShowInfo()
+        {
+            foreach (Car car in cars) 
+            {
+                car.ToString();
+            }
+        }
     }
 }

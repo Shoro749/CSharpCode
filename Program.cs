@@ -17,6 +17,11 @@ namespace CSharpCode
 
                 Console.InputEncoding = Encoding.Unicode;
                 Console.OutputEncoding = Encoding.Unicode;
+
+                Car car1 = new Car("BMW", "Black", "Дизель", 1685, 141, 4000);
+                Car car2 = new Car("Toyota", "Gray", "Бензин", 1591, 135, 6300);
+                Garage garage = new Garage(car1, car2);
+                garage.ShowInfo();
             }
             catch (Exception ex)
             {

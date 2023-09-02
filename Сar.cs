@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CSharpCode
 {
-    public class Сar
+    public class Car
     {
         public string _Brand;
         public string _color;
@@ -22,7 +22,7 @@ namespace CSharpCode
         public int _power;
         public int _revolutions;
 
-        public Сar(string brand, string color, string fuelType, int engineCapacity, int power, int revolutions)
+        public Car(string brand, string color, string fuelType, int engineCapacity, int power, int revolutions)
         {
             _Brand = brand;
             _color = color;
@@ -30,6 +30,12 @@ namespace CSharpCode
             _EngineCapacity = engineCapacity;
             _power = power;
             _revolutions = revolutions;
+        }
+
+        public void ToString()
+        {
+            Console.WriteLine($"Бренд: {_Brand}\nКолір: {_color}\nТип палива: {_FuelType}\n" +
+                $"Об'єм двигуна: {_EngineCapacity} куб.см\nПотужність: {_power}\nОбороти: {_revolutions} об/хв\n");
         }
     }
 }
