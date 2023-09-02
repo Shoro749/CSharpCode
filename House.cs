@@ -1,30 +1,33 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CSharpCode
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            try
-            {
                 /*Створіть клас «Будинок», в якому має міститися інформація про квартири в цьому будинку. Створіть клас
                 «Квартира» з інформацією про мешканців квартир. Реалізуйте підтримку ітератора для класів «Будинок» і «Квартира». 
                 Протестуйте можливість використання foreach для
                 класів «Будинок» і «Квартира».*/
 
-                Console.InputEncoding = Encoding.Unicode;
-                Console.OutputEncoding = Encoding.Unicode;
+namespace CSharpCode
+{
+    public class House
+    {
+        Dictionary<int, List<string>> apartments = new Dictionary<int, List<string>>();
+        
+        public House() 
+        {
+            apartments.Add(1, new List<string> { "Bob", "Alice" });
+            apartments.Add(2, new List<string> { "Patric", "Tom", "Barbara" });
+            apartments.Add(3, new List<string> { "Andrew" });
+        }
 
-
-            }
-            catch (Exception ex)
+        public void OutPut()
+        {
+            foreach (var item in apartments.Values)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Помилка! {ex.Message}");
+                
             }
-            Console.ReadKey();
-            Console.ResetColor();
         }
     }
 }
