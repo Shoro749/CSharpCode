@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,17 @@ namespace CSharpCode
 
         public void OutPut()
         {
-            foreach (var item in apartments.Values)
+            foreach (var kvp in apartments)
             {
-                
+                int key = kvp.Key;
+                List<string> values = kvp.Value;
+
+                Console.Write($"\nВ квартирі номер {key} проживають ");
+
+                foreach (string value in values)
+                {
+                    Console.Write($"{value}, ");
+                }
             }
         }
     }

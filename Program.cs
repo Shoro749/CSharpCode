@@ -16,7 +16,8 @@ namespace CSharpCode
                 Console.InputEncoding = Encoding.Unicode;
                 Console.OutputEncoding = Encoding.Unicode;
 
-
+                House house = new House();
+                house.OutPut();
             }
             catch (Exception ex)
             {
