@@ -18,5 +18,19 @@ namespace CSharpCode
             Manufacturer = manufacturer;
             Year = year;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Car car &&
+                   Name == car.Name &&
+                   Manufacturer == car.Manufacturer &&
+                   Year == car.Year; ;
+        }
+
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, Manufacturer, Year);
+        }
     }
 }
